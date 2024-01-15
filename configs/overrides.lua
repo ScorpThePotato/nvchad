@@ -30,6 +30,8 @@ M.treesitter = {
         "bash",
         "nix",
         "rust",
+        "c",
+        "cpp",
   },
   indent = {
     enable = true,
@@ -45,16 +47,20 @@ M.mason = {
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
+    -- Ricing and Web
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
     "prettier",
+    "jsonls",
+    "cssls",
 
-    -- c/cpp stuff
+
+    -- General Purpose
     "clangd",
     "clang-format",
+    --"nil_ls",
+    "rust",
   },
 }
 
