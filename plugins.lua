@@ -50,36 +50,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      overrides.treesitter,
-      ensure_installed = {
-        -- defaults
-        "vim",
-        "lua",
-
-        -- utility
-        "comment",
-        "git_config",
-        "git_rebase",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "passwd",
-        
-        -- ricing
-        "html",
-        "css",
-        "javascript",
-        "json",
-        "rasi",
-        
-        -- general
-        "bash",
-        "nix",
-        "rust",
-
-      },
-    },
+    opts = overrides.treesitter,
   },
 
   {
