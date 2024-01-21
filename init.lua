@@ -19,3 +19,4 @@ if vim.g.neovide then
   vim.opt.titlelen = 0 -- do not shorten title
   vim.opt.titlestring = 'nvim %{expand("%:p")}'
 end
+
