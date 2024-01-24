@@ -4,6 +4,7 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
+    ["<leader>fc"] = { function() require("telescope.builtin").find_files({ cwd = "$HOME/.config/nvim/lua/custom/" }) end, "Find config file"},
 
     --  format with conform
     ["<leader>fm"] = {
@@ -11,19 +12,36 @@ M.general = {
         require("conform").format()
       end,
       "formatting",
-    }
+    },
 
   },
+
   v = {
     [">"] = { ">gv", "indent"},
   },
 }
 
-M.leap = {
+M.flash = {
   n = {
-    ["q"] = { "<Plug>(leap-forward)", "Leap forward"},
-    ["Q"] = { "<Plug>(leap-backward)", "Leap backward"},
-    ["gq"] = { "<Plug>(leap-from-window)", "Leap from window"},
+    ["q"] = { function() require("flash").jump() end, "Flash"},
+    ["Q"] = { function() require("flash").treesitter() end, "Flash Treesitter"},
+  },
+
+  x = {
+    ["q"] = { function() require("flash").jump() end, "Flash"},
+    ["Q"] = { function() require("flash").treesitter() end, "Flash Treesitter"},
+    ["R"] = { function() require("flash").treesitter_search() end, "Treesitter Search"},
+  },
+
+  o = {
+    ["q"] = { function() require("flash").jump() end, "Flash"},
+    ["Q"] = { function() require("flash").treesitter() end, "Flash Treesitter"},
+    ["r"] = { function() require("flash").remote() end, "Remote Flash"},
+    ["R"] = { function() require("flash").treesitter_search() end, "Treesitter Search"},
+  },
+
+  c = {
+    ["<c-s>"] = { function() require("flash").toggle() end, "Toggle Flash Search"},
   },
 }
 
