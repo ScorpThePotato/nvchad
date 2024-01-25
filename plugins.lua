@@ -99,12 +99,27 @@ local plugins = {
 
   {
     "nguyenvukhang/nvim-toggler",
-    config = function ()
-      require("nvim-toggler").setup({
+    config = function()
+      require("nvim-toggler").setup {
         remove_default_keybinds = true,
-      })
+      }
     end,
   },
+
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
+
+--  {
+--    "AckslD/nvim-neoclip.lua",
+--    requires = {
+--      {'nvim-telescope/telescope.nvim'},
+--    },
+--    config = function()
+--      require("neoclip").setup()
+--    end,
+--  },
 
   -- To make a plugin not be loaded
   -- {
