@@ -45,6 +45,12 @@ M.flash = {
   },
 }
 
+M.toggler = {
+  n = {
+    ["<leader>i"] = { function() require("nvim-toggler").toggle() end, "Invert Word"},
+  },
+}
+
 -- more keybinds!
 
 return M

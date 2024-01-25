@@ -97,6 +97,15 @@ local plugins = {
     end,
   },
 
+  {
+    "nguyenvukhang/nvim-toggler",
+    config = function ()
+      require("nvim-toggler").setup({
+        remove_default_keybinds = true,
+      })
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
