@@ -92,17 +92,17 @@ local plugins = {
     },
   },
 
---  {
---    "kdheepak/lazygit.nvim",
---    dependencies = {
---      "nvim-telescope/telescope.nvim",
---      "nvim-lua/plenary.nvim",
---    },
---    config = function()
---      require("telescope").load_extension "lazygit"
---    end,
---    keys = {},
---  },
+  --  {
+  --    "kdheepak/lazygit.nvim",
+  --    dependencies = {
+  --      "nvim-telescope/telescope.nvim",
+  --      "nvim-lua/plenary.nvim",
+  --    },
+  --    config = function()
+  --      require("telescope").load_extension "lazygit"
+  --    end,
+  --    keys = {},
+  --  },
 
   {
     "kylechui/nvim-surround",
@@ -132,6 +132,24 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     lazy = false,
+  },
+
+  {
+    "fraso-dev/nvim-listchars",
+    lazy = false,
+    config = function()
+      require("nvim-listchars").setup {
+        save_state = true, -- If enabled, save toggled state in a cache file. Will overwrite current `vim.opt.list` value.
+        listchars = { -- `listchars` to be displayed. See available options by running `:help listchars`
+          eol = "↲",
+          tab = "» ",
+          trail = "-",
+          nbsp = "󱓇",
+        },
+        exclude_filetypes = {}, -- List of filetypes where `listchars` is disabled
+        lighten_step = 5, -- Amount to add/remove from base color
+      }
+    end,
   },
 
   --  {
