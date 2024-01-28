@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -7,9 +7,10 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     optional = true,
+
     opts = function(_, opts)
       local function flash(prompt_bufnr)
-        require("flash").jump({
+        require("flash").jump {
           pattern = "^",
           label = { after = { 0, 0 } },
           search = {
@@ -24,11 +25,11 @@ local plugins = {
             local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
             picker:set_selection(match.pos[1] - 1)
           end,
-        })
+        }
       end
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         mappings = {
-          n = { s = flash },
+          n = { Q = flash },
           i = { ["<c-s>"] = flash },
         },
       })
@@ -45,7 +46,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -100,6 +101,18 @@ local plugins = {
     config = function()
        require("telescope").load_extension("lazygit")
     end,
+    keys = {},
+  },
+
+  {
+    "kylechui/nvim-surround",
+    -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
   },
 
   {
@@ -107,6 +120,29 @@ local plugins = {
       lazy = false,
   },
 
+{
+    "nguyenvukhang/nvim-toggler",
+    config = function()
+      require("nvim-toggler").setup {
+        remove_default_keybinds = true,
+      }
+    end,
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
+
+--  {
+--    "AckslD/nvim-neoclip.lua",
+--    requires = {
+--      {'nvim-telescope/telescope.nvim'},
+--    },
+--    config = function()
+--      require("neoclip").setup()
+--    end,
+--  },
 
   -- To make a plugin not be loaded
   -- {
