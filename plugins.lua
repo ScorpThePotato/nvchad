@@ -92,17 +92,17 @@ local plugins = {
     },
   },
 
-  {
-    "kdheepak/lazygit.nvim",
-     dependencies =  {
-       "nvim-telescope/telescope.nvim",
-       "nvim-lua/plenary.nvim"
-     },
-    config = function()
-       require("telescope").load_extension("lazygit")
-    end,
-    keys = {},
-  },
+--  {
+--    "kdheepak/lazygit.nvim",
+--    dependencies = {
+--      "nvim-telescope/telescope.nvim",
+--      "nvim-lua/plenary.nvim",
+--    },
+--    config = function()
+--      require("telescope").load_extension "lazygit"
+--    end,
+--    keys = {},
+--  },
 
   {
     "kylechui/nvim-surround",
@@ -116,11 +116,6 @@ local plugins = {
   },
 
   {
-    "unblevable/quick-scope",
-      lazy = false,
-  },
-
-{
     "nguyenvukhang/nvim-toggler",
     config = function()
       require("nvim-toggler").setup {
@@ -134,15 +129,20 @@ local plugins = {
     lazy = false,
   },
 
---  {
---    "AckslD/nvim-neoclip.lua",
---    requires = {
---      {'nvim-telescope/telescope.nvim'},
---    },
---    config = function()
---      require("neoclip").setup()
---    end,
---  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
+
+  --  {
+  --    "AckslD/nvim-neoclip.lua",
+  --    requires = {
+  --      {'nvim-telescope/telescope.nvim'},
+  --    },
+  --    config = function()
+  --      require("neoclip").setup()
+  --    end,
+  --  },
 
   -- To make a plugin not be loaded
   -- {
