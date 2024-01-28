@@ -27,6 +27,15 @@ M.leap = {
   },
 }
 
+M.lazygit = {
+  n = {
+    ["<leader>gl"] = {function ()
+        require("telescope").extensions.lazygit.lazygit()
+      end,
+      "LazyGit"
+    }
+  }
+}
 -- more keybinds!
 
 return M
