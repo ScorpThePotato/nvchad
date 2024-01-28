@@ -5,6 +5,7 @@ M.general = {
   n = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
     ["<leader>fc"] = { function() require("telescope.builtin").find_files({ cwd = "$HOME/.config/nvim/lua/custom/" }) end, "Find config file"},
+    ["<leader>Q"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Use QuickFix" },
 
     --  format with conform
     ["<leader>fm"] = {
