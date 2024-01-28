@@ -9,7 +9,7 @@
 
 -- Extra Chars
 vim.opt.list = true
-vim.opt.expandtab = false
+-- vim.opt.expandtab = false -- i think this is unneeded
 
 -- Neovide Settings
 if vim.g.neovide then
